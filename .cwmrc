@@ -136,5 +136,7 @@ bind-mouse 4-3 window-resize
 #Change window group with middle click.
 bind-mouse 4-2 window-lower
 
+picom
+
 #Hide window with shift and middle click.
 bind-mouse 4S-2 window-hide
