@@ -1,0 +1,140 @@
+## settings
+borderwidth 0
+snapdist 10
+gap 10 10 10 10
+sticky yes
+snapdist 4
+unbind-key all
+moveamount 10
+fontname "JetBrainsMono Nerd Font:size=9"
+
+
+## execs
+bind-key 4-Return       "kitty"
+bind-key 4S-Return      "emacs"
+bind-key 4-a            "kitty -e fff"
+bind-key 4-f            "firefox"
+
+bind-key Print          "flameshot gui"
+
+bind-key 4-d           "rofi -show drun"
+bind-key 4-comma        menu-cmd
+
+## groups
+bind-key 4-1 group-only-1
+bind-key 4-2 group-only-2
+bind-key 4-3 group-only-3
+bind-key 4-8 group-only-4
+bind-key 4-9 group-only-5
+bind-key 4-0 group-only-6
+bind-key 4S-1 window-movetogroup-1
+bind-key 4S-2 window-movetogroup-2
+bind-key 4S-3 window-movetogroup-3
+bind-key 4S-8 window-movetogroup-4
+bind-key 4S-9 window-movetogroup-5
+bind-key 4S-0 window-movetogroup-6
+
+
+## keybinds
+bind-key M-Tab      window-cycle
+bind-key 4-Tab      group-cycle
+
+bind-key 4-f        window-maximize
+bind-key 4-space    window-fullscreen
+bind-key 4-o        window-snap-left
+bind-key 4-p        window-snap-right 
+bind-key 4-q        window-close
+
+bind-key 4S-b       window-vmaximize
+bind-key 4S-r       restart
+bind-key 4S-e       quit
+
+
+## resize
+bind-key 4S-h window-resize-left
+bind-key 4S-j window-resize-down
+bind-key 4S-k window-resize-up
+bind-key 4S-l window-resize-right
+bind-key 4-h window-move-left-big
+bind-key 4-j window-move-down-big
+bind-key 4-k window-move-up-big
+bind-key 4-l window-move-right-big
+
+
+## mousebinds
+unbind-mouse all
+
+bind-mouse M-1 window-resize
+bind-mouse 4S-1 window-resize
+bind-mouse 4-1 window-move
+bind-mouse 4-2 window-lower
+
+
+## colors
+color menufg        "#f0f0f0"
+color menubg        "#0f0f0f"
+color font          "#f0f0f0"
+color selfont       "#0f0f0f"
+
+color activeborder  "#f0f0f0"
+color inactiveborder"#0f0f0f"
+
+
+## vol
+bind-key XF86AudioLowerVolume "/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%"
+bind-key XF86AudioRaiseVolume "/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%"
+bind-key XF86AudioMute "/usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle"
+bind-key XF86MonBrightnessUp "/bin/xbacklight -inc 10"
+bind-key XF86MonBrightnessDown "/bin/xbacklight -dec 10"
+
+
+## launch it
+autogroup	2 	"Firefox"
+autogroup	3 	"zathura"
+
+
+## commands
+command firefox        "firefox"
+
+#Maximize windows in chosen direction
+bind-key 4-equal window-vmaximize
+bind-key 4S-equal window-hmaximize
+
+#Resize windows
+bind-key 4-h window-resize-left-big
+bind-key 4-l window-resize-right-big
+bind-key 4-k window-resize-up-big
+bind-key 4-j window-resize-down-big
+
+#conflicts with other keybinds
+#bind-key 4-left window-resize-left-big
+#bind-key 4-right window-resize-right-big
+#bind-key 4-up window-resize-up-big
+#bind-key 4-down window-resize-down-big
+
+#Unbind mouse shortcuts (so we can use our)
+unbind-mouse 1
+unbind-mouse 2
+unbind-mouse M-1
+unbind-mouse CM-1
+unbind-mouse M-2
+unbind-mouse M-3
+unbind-mouse CMS-3
+
+#Mouse stuff, sowm like shortcuts
+
+bind-mouse 1 drawterm
+bind-mouse 2 menu-window
+bind-mouse 3 menu-cmd
+
+#Move window with super and left click
+bind-mouse 4-1 window-move
+
+#Resize window with right click.
+bind-mouse 4-3 window-resize
+
+#Change window group with middle click.
+bind-mouse 4-2 window-lower
+
+#Hide window with shift and middle click.
+bind-mouse 4S-2 window-hide
